@@ -1,0 +1,174 @@
+﻿@model WebApplication1.Models.DetailsViewModel
+
+@{
+    ViewData["Title"] = "Detalii Personale";
+    var date = Model.DataNasterii.Date;
+
+}
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+@*<div class="text-center">
+        <h1 class="display-4">Welcome</h1>
+        <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with dfdfsdlASP.NET Core</a>.</p>
+    </div>*@
+
+<style>
+    * {
+        box-sizing: border-box;
+    }
+    /* Create two equal columns that floats next to each other */
+    .column {
+        float: left;
+        width: 50%;
+        padding: 10px;
+        height: 234px; /* Should be removed. Only for demonstration */
+    }
+    /* Clear floats after the columns */
+    .row:after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+</style>
+
+
+
+
+
+
+
+
+<div>
+    <h4>Buna ziua, Adrian</h4>
+    <hr />
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <form action="demo_form.asp">
+                    Nume <input type="text" name="fnume" disabled value="@Html.DisplayTextFor(e => e.Nume)"><br>
+                    Prenume <input type="text" name="fprenume" disabled value="@Html.DisplayTextFor(e => e.Prenume)"><br>
+                    Adresa <input type="text" name="fadresa" disabled value="@Html.DisplayTextFor(e => e.Adresa)"><br>
+                    Oras <input type="text" name="foras" disabled value="@Html.DisplayTextFor(e => e.Oras)"><br>
+                    CNP <input type="text" name="fcnp" disabled value="@Html.DisplayTextFor(e => e.Cnp)"><br>
+
+                    <p>
+                        <a class="btn btn-outline-info mt-4" data-toggle="collapse" href="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+                            More Details
+                        </a>
+
+                    </p>
+                    <div class="collapse" id="collapseExample">
+                        Seria <input type="text" name="fseria" disabled value="@Html.DisplayTextFor(e => e.Serie)"><br>
+                        Numar <input type="text" name="fnumar" disabled value="@Html.DisplayTextFor(e => e.Numar)"><br>
+                        Data Nasterii <input type="text" name="fdatanasterii" disabled value="@date"><br>
+                        Status Medic de Familie <input type="text" name="fdatanasterii" disabled value="@Html.DisplayTextFor(e => e.StatusMedic)"><br>
+                        Status Politie <input type="text" name="fdatanasterii" disabled value="@Html.DisplayTextFor(e => e.StatusPolitie)"><br>
+
+
+
+
+
+                        @{
+                            if (Model.StatusUniversitate == true)
+                            {
+
+                                <span>Facultate<input type="text" name="ffacultate" disabled value="@Html.DisplayTextFor(e => e.Facultate)"><br></span>
+                                <span>Specializare<input type="text" name="fspecializare" disabled value="@Html.DisplayTextFor(e => e.Specializare)"><br></span>
+                                <span>Stadiu<input type="text" name="fstadiu" disabled value="@Html.DisplayTextFor(e => e.Stadiu)"><br></span>
+                                <span>An<input type="text" name="fan" disabled value="@Html.DisplayTextFor(e => e.An)"><br></span>
+                            }
+                        }
+                    </div>
+
+
+
+
+                </form>
+            </div>
+            <div class="col-md-8">
+                <br />
+                <div>
+
+                </div>
+
+                <div class="container">
+                    <div class="row">
+
+                        <div class="col-md-1">
+                        </div>
+
+                        <div class="col-md-7">
+
+                            <div class="field">
+
+                                <span class="field"></span>
+                                <div class="row">
+                                    <div class="column" , >
+                                        <p class="m-3 p-3 " style="margin-top:70px;">Softbinator are nevoie de o adeverinta de la medicul de familie care atesta ca sunteti apt pentru munca.</p>
+                                    </div>
+                                    <div class="column">
+                                        <label id="status"  style="margin-top:70px; margin-left:100px"></label>
+
+                                    </div>
+
+                                    <div style="width:400px;" class=" p-3">
+                                        <div style="float: left; width: 50px">
+                                            <form id="thisone" action="post_nrs_users.asp" method="post">
+                                                <input onclick="accepta()" name="" value="Accepta">
+                                            </form>
+                                        </div>
+                                        <div style="float: right; width: 50px" >
+                                            <form id="thistoo" action="post_nrs_users.asp" method="post">
+                                                <input onclick="respinge()" name="" value="Refuza">
+                                            </form>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+
+
+                            </div>
+
+
+
+                        </div>
+
+
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+
+
+    <script>
+        var statusHtml = "Status: ";
+        var status = "in asteptare";
+        document.getElementById('status').innerHTML = statusHtml + status;
+            //document.getElementsByName("fnume")[0].value = "george"
+
+
+        function accepta() {
+            status = "acceptat";
+            document.getElementById('status').innerHTML = statusHtml + status;
+
+        }
+
+
+        function respinge() {
+            status = "respins";
+            document.getElementById('status').innerHTML = statusHtml + status;
+
+        }
+
+
+    </script>

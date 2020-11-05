@@ -1,0 +1,104 @@
+﻿@model WebApplication1.Models.DetailsViewModel
+
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Persoane</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Nume)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Nume)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Prenume)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Prenume)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Serie)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Serie)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Numar)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Numar)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Adresa)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Adresa)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Oras)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Oras)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.DataNasterii)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.DataNasterii)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.StatusPolitie)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.StatusPolitie)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.StatusMedic)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.StatusMedic)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.StatusUniversitate)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.StatusUniversitate)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Facultate)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Facultate)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Specializare)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Specializare)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Stadiu)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Stadiu)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.An)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.An)
+        </dd>
+
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.Cnp">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>
